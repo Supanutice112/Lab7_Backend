@@ -13,14 +13,14 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class OrganizerServiceImpl implements OrganizerService {
-    final OrganizerDao organizerDao;
-    @Override
-    public List<Organizer> getAllOrganizer() {
-        return organizerDao.getOrganizer(Pageable.unpaged()).getContent();
-    }
+        final OrganizerDao organizerDao;
+        @Override
+        public List<Organizer> getAllOrganizer() {
+            return organizerDao.getOrganizer(Pageable.unpaged()).getContent();
+        }
 
-    @Override
-    public Page<Organizer> getOrganizer(Integer page, Integer pageSize) {
-        return organizerDao.getOrganizer(PageRequest.of(page,pageSize));
-    }
+        @Override
+        public Page<Organizer> getOrganizer(Integer page, Integer pageSize) {
+            return organizerDao.getOrganizer(PageRequest.of(page,pageSize));
+        }
 }
